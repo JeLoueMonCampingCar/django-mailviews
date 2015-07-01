@@ -1,10 +1,18 @@
 django-mailviews
 ================
 
+
+
 Class-based email views for the Django framework, including a message previewer.
 
 .. image:: https://travis-ci.org/disqus/django-mailviews.png?branch=master
    :target: https://travis-ci.org/disqus/django-mailviews
+
+
+Info
+------------
+this fork fix compatibility with django 1.8
+
 
 Introduction
 ------------
