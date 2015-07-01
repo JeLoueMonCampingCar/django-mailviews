@@ -1,11 +1,18 @@
 import random
+import django
+django_version = django.VERSION[0:2]
 
 from django import forms
-from django.contrib.webdesign.lorem_ipsum import paragraphs, words
+
+# The lorem template tag is now included in the built-in tags
+if django_version >= (1, 8):
+    from django.utils.lorem_ipsum import words, paragraphs
+else:
+    from django.contrib.webdesign.lorem_ipsum import words, paragraphs
 
 from mailviews.previews import Preview, site
 from mailviews.tests.emails.views import (BasicEmailMessageView,
-    BasicHTMLEmailMessageView)
+                                          BasicHTMLEmailMessageView)
 
 
 class BasicPreview(Preview):
